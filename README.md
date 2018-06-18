@@ -20,6 +20,33 @@ ExecStart=/usr/bin/dockerd -H fd:// -H tcp://0.0.0.0:2375  $DOCKER_OPTS
 systemctl daemon-reload
 service docker restart
 `
+### in order to list images, execute the following command:
+`
+curl http://localhost:2375/images/json
+`
+
+result:
+```
+[  
+   {  
+      "Containers":-1,
+      "Created":1525477287,
+      "Id":"sha256:5f5ccdc8aedc4183c2f79dde76d7412913762bf0f0070cd503488b8989e1ed23",
+      "Labels":null,
+      "ParentId":"",
+      "RepoDigests":[  
+         "mysql@sha256:7e3575b7949a4f8712a47b0fc875022dcea5d84f4672b1532587b6933502f757"
+      ],
+      "RepoTags":[  
+         "mysql:5.6"
+      ],
+      "SharedSize":-1,
+      "Size":256072166,
+      "VirtualSize":256072166
+   }
+]
+```
+
 
 ### try list containers
 
