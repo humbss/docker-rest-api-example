@@ -47,6 +47,38 @@ result:
 ]
 ```
 
+### let's pull the lastest mysql image
+
+`
+sudo curl -v -XPOST http://localhost:2375/images/create?fromImage=mysql:5.6
+`
+
+### to create a new container
+
+`
+http://localhost:2375/containers/create?name=mysql-test
+`
+with the following post json body:
+
+```
+{
+       "Hostname": "",
+       "Domainname": "",
+       "User": "",
+       "AttachStdin": false,
+       "AttachStdout": true,
+       "AttachStderr": true,
+       "Tty": false,
+       "OpenStdin": false,
+       "StdinOnce": false,
+       "Env": [
+               "MYSQL_ALLOW_EMPTY_PASSWORD=yes",
+               "MYSQL_ROOT_PASSWORD=123123"
+       ],
+       "Image": "mysql:5.6"
+  }
+```
+
 
 ### try list containers
 
