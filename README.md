@@ -17,7 +17,8 @@ ExecStart=/usr/bin/dockerd -H fd:// -H tcp://0.0.0.0:2375  $DOCKER_OPTS
 
 ### restart docker daemon
 `
-systemctl daemon-reload
+systemctl daemon-reload 
+
 service docker restart
 `
 ### in order to list images, execute the following command:
